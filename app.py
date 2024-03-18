@@ -13,7 +13,7 @@ st.set_page_config(page_title='Cover Letter Helper', page_icon='📝', layout='w
 st.title('📝 Cover Letter Helper')
 
 # Read candidate's resume from PDF
-candidate_name = 'Bob Cravens'
+candidate_name = os.getenv('CANDIDATE_NAME')
 resume_text = ''
 if os.path.exists('./resume.pdf'):
     with open('./resume.pdf', 'rb') as pdf_file:

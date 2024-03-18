@@ -16,3 +16,11 @@ I used https://www.zerogpt.com/ to determine the probability that AI wrote the r
 - After Optimizing the Prompt - Average score around `28%`
 
 If you were going to use this generator, you should treat the generated text as an "initial draft".
+
+## Usage
+
+1. Copy `.env_example` to `.env` and add the OpenAI API key and the candidate name/
+2. Replace `resume.pdf` with the resume from the actual candidate.
+3. Replace `sample_writing_stype.txt` with samples from the actual candidate.
+4. Run `pip install -r requirements.txt`
+5. Run `streamlit run app.py`
