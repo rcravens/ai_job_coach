@@ -26,6 +26,7 @@ coach = Coach(candidate, ai)
 st.set_page_config(page_title='AI Job Search Coach', page_icon='📝', layout='wide')
 st.title('📝 AI Job Search Coach')
 
+# Sidebar
 with st.sidebar:
     st.subheader('Candidate Summary')
     st.write('Candidate Name: ' + candidate_name)
@@ -42,6 +43,7 @@ with st.sidebar:
     ai.selected_model = st.selectbox('Select GPT Model', options=ai.models, index=0)
     ai.temperature = st.number_input('AI Temperature', value=ai.temperature, min_value=0.0, max_value=2.0)
 
+# Main page
 tab1, tab2 = st.tabs(['❓Q&A', '📄 Cover Letter'])
 
 with tab1:
