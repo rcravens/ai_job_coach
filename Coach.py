@@ -13,7 +13,7 @@ class Coach:
         prompt = CoachPrompt()
         prompt.add_system_message(f'You are helping a candidate summarize their work experience by answering questions about their experience')
         if is_summary_in_my_writing_style:
-            prompt.add_writing_stype(self.candidate)
+            prompt.add_writing_style(self.candidate)
         prompt.add_resume(self.candidate)
         prompt.add_user_message(f'{user_prompt}')
 
@@ -49,7 +49,7 @@ class Coach:
         prompt.add_user_message(f'The cover letter should be written like a real person created the content')
 
         if is_cover_letter_in_my_writing_style:
-            prompt.add_writing_stype(self.candidate)
+            prompt.add_writing_style(self.candidate)
 
         if additional_guidance is not None and len(additional_guidance) > 0:
             prompt.add_user_message(f'In addition to the previous history, here is some additional guidance: {additional_guidance}')

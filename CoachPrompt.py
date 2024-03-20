@@ -11,7 +11,7 @@ class CoachPrompt(Prompt):
         self.add_user_message(f'The candidate\'s name is: {candidate.candidate_name}')
         self.add_user_message(f'The candidate\'s resume is: {candidate.resume_text}')
 
-    def add_writing_stype(self, candidate: Candidate):
+    def add_writing_style(self, candidate: Candidate):
         self.add_system_message(f'The candidate\'s writing style is: {candidate.sample_writing_style}')
         self.add_system_message(f'The generated text should use the voice, tone, style, and structure of the candidate\'s writing style')
         self.add_system_message(f'The generated text should only use information from the candidate\'s resume and not directly use content from the candidate\'s writing style.')
