@@ -32,8 +32,6 @@ with st.sidebar:
     st.write('Candidate Name: ' + candidate_name)
     st.write('Resume Source: ' + candidate.resume_source)
     candidate.resume_source = st.selectbox('Select Resume Source', options=candidate.resume_sources, index=0)
-    if 'resume_source' not in st.session_state:
-        st.session_state['resume_source'] = candidate.resume_source
     st.write('Resume (word count):', len(candidate.resume_text.split()))
     st.write('Writing Style (word count): ', len(candidate.sample_writing_style.split()))
 

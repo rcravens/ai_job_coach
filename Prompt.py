@@ -3,10 +3,10 @@ class Prompt:
         self.messages = []
 
     def add_system_message(self, msg: str):
-        self.messages.append({'role': 'system', 'content': msg})
+        self.add_message('system', msg)
 
     def add_user_message(self, msg: str):
-        self.messages.append({'role': 'user', 'content': msg})
+        self.add_message('user', msg)
 
     def add_message(self, role: str, msg: str):
         self.messages.append({'role': role, 'content': msg})
