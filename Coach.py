@@ -12,9 +12,9 @@ class Coach:
         # Build the prompt
         prompt = CoachPrompt()
         prompt.add_system_message(f'You are helping a candidate summarize their work experience by answering questions about their experience')
+        prompt.add_resume(self.candidate)
         if is_summary_in_my_writing_style:
             prompt.add_writing_style(self.candidate)
-        prompt.add_resume(self.candidate)
         prompt.add_user_message(f'{user_prompt}')
 
         # Get the prompt response
