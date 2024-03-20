@@ -46,7 +46,6 @@ tab1, tab2 = st.tabs(['❓Q&A', '📄 Cover Letter'])
 
 with tab1:
     # Tool to help generate summaries about the candidate's work experience
-    st.header('Experience Summarization')
     st.markdown("""
         ## Experience Summarization
 
