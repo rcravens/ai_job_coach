@@ -9,6 +9,7 @@ class Coach:
         self.ai = ai
 
     def summarize(self, user_prompt: str, is_summary_in_my_writing_style: bool):
+        # Build the prompt
         prompt = CoachPrompt()
         prompt.add_system_message(f'You are helping a candidate summarize their work experience by answering questions about their experience')
         if is_summary_in_my_writing_style:
@@ -16,6 +17,7 @@ class Coach:
         prompt.add_resume(self.candidate)
         prompt.add_user_message(f'{user_prompt}')
 
+        # Get the prompt response
         response = self.ai.get_prompt_response(prompt.messages)
 
         return response
@@ -30,6 +32,7 @@ class Coach:
                      additional_guidance: str = None
                      ):
 
+        # Build the prompt
         prompt = CoachPrompt()
         prompt.add_system_message(f'You are helping a candidate generate a cover letter based on the following candidate resume and a job description.')
         prompt.add_user_message(f'Generate a cover letter based on the following candidate\'s resume and job description.')
@@ -51,6 +54,7 @@ class Coach:
         if additional_guidance is not None and len(additional_guidance) > 0:
             prompt.add_user_message(f'In addition to the previous history, here is some additional guidance: {additional_guidance}')
 
+        # Get the prompt response
         cover_letter = self.ai.get_prompt_response(prompt.messages)
 
         return cover_letter
