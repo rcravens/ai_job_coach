@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 from AiEngine import AiEngine
 from Candidate import Candidate
-from ResumeHelper import ResumeHelper
+from Coach import Coach
 
 # Load environment variables
 load_dotenv()
@@ -13,17 +13,18 @@ load_dotenv()
 ai_api_key = os.getenv('OPENAI_API_KEY')
 candidate_name = os.getenv('CANDIDATE_NAME')
 
+# Create instance of AI engine
 ai = AiEngine(ai_api_key)
-
-# Initialize streamlit
-st.set_page_config(page_title='AI Job Search Coach', page_icon='📝', layout='wide')
-st.title('📝 AI Job Search Coach')
 
 # Create instance of candidate
 candidate = Candidate(candidate_name)
 
 # Create instance of resume helper
-resume_helper = ResumeHelper(candidate, ai)
+coach = Coach(candidate, ai)
+
+# Initialize streamlit
+st.set_page_config(page_title='AI Job Search Coach', page_icon='📝', layout='wide')
+st.title('📝 AI Job Search Coach')
 
 with st.sidebar:
     st.subheader('Candidate Summary')
@@ -64,7 +65,7 @@ with tab1:
 
         # Use the API to generate a cover letter
         if summarize_submitted:
-            summary = resume_helper.summarize(prompt, is_summary_in_my_writing_style)
+            summary = coach.summarize(prompt, is_summary_in_my_writing_style)
 
             st.write(summary)
 
@@ -84,7 +85,7 @@ with tab2:
 
         # Use OpenAI API to create cover letter
         if submitted:
-            cover_letter = resume_helper.cover_letter(
+            cover_letter = coach.cover_letter(
                 job_description,
                 job_title,
                 company,
@@ -93,5 +94,5 @@ with tab2:
                 is_cover_letter_in_my_writing_style,
                 additional_guidance
             )
-            
+
             st.write(cover_letter)
