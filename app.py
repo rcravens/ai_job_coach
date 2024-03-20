@@ -46,14 +46,15 @@ with tab1:
     st.header('Experience Summarization')
     st.markdown("""
         ## Experience Summarization
-        
+
         Let AI help answer questions about your work experience and employment opportunities. Here are a few example questions:
-        
+
         - Create a top 10 list of industries where my work experience is relevant
         - Create a list of  the top 5 things i should highlight from my work experience
         - What are the top 5 most likely roles that i am qualified for
         - Create a list of all my previous roles
         - In 3-4 sentences, summarize the Asset IQ project
+        - In 3-4 sentences, summarize the candidate's role in the Asset IQ project
         - Provide a single paragraph highlighting my experience 
     """
                 )

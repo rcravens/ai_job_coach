@@ -12,14 +12,14 @@ class CoachPrompt(Prompt):
         self.add_user_message(f'The candidate\'s resume is: {candidate.resume_text}')
 
     def add_writing_stype(self, candidate: Candidate):
-        self.add_user_message(f'The candidate\'s writing style is: {candidate.sample_writing_style}')
-        self.add_user_message(f'The cover letter should use the voice, tone, style, and structure of the candidate\'s writing style')
-        self.add_user_message(f'The resulting cover letter should only use information from the candidate\'s resume and not directly use content from the candidate\'s writing style.')
+        self.add_system_message(f'The candidate\'s writing style is: {candidate.sample_writing_style}')
+        self.add_system_message(f'The generated text should use the voice, tone, style, and structure of the candidate\'s writing style')
+        self.add_system_message(f'The generated text should only use information from the candidate\'s resume and not directly use content from the candidate\'s writing style.')
 
     @staticmethod
     def _base_messages():
         return [
             {'role': 'system', 'content': f'You are a job search coach and you provide professional guidance to candidates based on the candidate\'s resume text and a prompt.'},
             {'role': 'system', 'content': f'All generated text should be written as if the candidate was writing it themself.'},
-            {'role': 'system', 'content': f'The generated text should be written as if a human was writing it themselves.'},
+            {'role': 'system', 'content': f'The generated text should be written as if a human was writing it themself.'},
         ]

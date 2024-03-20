@@ -8,12 +8,13 @@ class Coach:
         self.candidate = candidate
         self.ai = ai
 
-    def summarize(self, prompt: str, is_summary_in_my_writing_style: bool):
+    def summarize(self, user_prompt: str, is_summary_in_my_writing_style: bool):
         prompt = CoachPrompt()
-        prompt.add_resume(self.candidate)
-        prompt.add_user_message(f'{prompt}')
+        prompt.add_system_message(f'You are helping a candidate summarize their work experience by answering questions about their experience')
         if is_summary_in_my_writing_style:
             prompt.add_writing_stype(self.candidate)
+        prompt.add_resume(self.candidate)
+        prompt.add_user_message(f'{user_prompt}')
 
         response = self.ai.get_prompt_response(prompt.messages)
 
