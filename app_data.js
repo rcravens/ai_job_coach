@@ -28,24 +28,23 @@ export default function app_data() {
             words: ['Leader', 'Strategic Thinker', 'Innovator', 'Architect', 'Full Stack Developer'],
         },
         about: {
-            title: 'Director | Manager | Architect | Full Stack Developer',
+            title: 'Software Engineering - Director | Manager | Architect | Full Stack Developer',
             image: 'assets/img/cravens2.jpg',
             summary: `Innovative professional with a dynamic background in software engineering and
                             application architecture. Seasoned leader adept at spearheading teams to develop and
                             maintain cutting-edge full-stack solutions.`,
             highlights: [
-                'Proven track record of providing strategic leadership in software engineering.',
-                'Skilled in leveraging technological advancements to drive business process enhancements and deliver impactful solutions.',
-                'Adept at leading cross-functional teams in the development and maintenance of robust full-stack solutions, ensuring high availability, scalability, and security for backend systems.',
-                'Proficient in delivering clean, intuitive front-end interfaces that prioritize user experience.',
-                'Experienced in utilizing data-driven insights to empower leadership and team members effectively, with a strong focus on optimizing software development processes through the integration of industry best practices.',
-                'Demonstrated expertise in building integrations that efficiently extract and integrate data from diverse sources, and in the establishment and management of both on-premise and cloud-based servers.',
-                'Competent in the establishment and management of on-premise or cloud-based servers.',
-                'Expertise in optimizing software development processes by integrating industry best practices.',
-                'Enthusiastic about continuous learning and staying abreast of emerging technologies to drive innovation.',
-                'Proven track record as a senior-level Application Architect & Developer, adept in all facets of product development.',
-                'Possess a strong foundation in engineering, science, and mathematics, enhancing problem-solving capabilities.',
-                'Capable of thriving both independently and collaboratively within diverse team environments.',
+                '<strong>Leadership:</strong> Ability to lead and inspire software engineers towards achieving company goals.',
+                '<strong>Strategic Planning:</strong> Proven track record of providing strategic leadership and vision.',
+                '<strong>Team Management:</strong> Proficiency in managing and growing teams, including hiring, mentoring, and performance evaluation.',
+                '<strong>Project Management:</strong> Adept at leading cross-functional teams in the development and maintenance of robust full-stack solutions, ensuring high availability, scalability, and security for backend systems.',
+                '<strong>Technical Expertise:</strong> Deep understanding of software engineering principles, modern technologies, and industry best practices. Enthusiastic about continuous learning and staying abreast of emerging technologies to drive innovation.',
+                '<strong>Problem-Solving Skills:</strong> Aptitude for identifying and resolving complex technical issues efficiently, both independently and collaboratively.',
+                '<strong>Communication Skills:</strong> Excellent verbal and written communication skills to effectively communicate with stakeholders and team members.',
+                '<strong>Architectural Leadership:</strong> Demonstrated ability to provide architectural leadership, guiding the design and implementation of scalable, reliable, and maintainable solutions.',
+                '<strong>Stakeholder Management:</strong> Excellence in building and maintaining relationships with key stakeholders, including product managers, executives, and external partners.',
+                '<strong>Change Management:</strong> Skilled in driving organizational change and adapting to evolving business needs.',
+                '<strong>Data Informed Approach:</strong> Experienced in establishing data-driven insights and cultivating a data-driven culture to optimize business processes.',
             ]
         },
         skills: {
@@ -53,9 +52,9 @@ export default function app_data() {
                             contributed to my professional growth and success, enabling me to effectively lead teams
                             and drive the development of innovative products:`,
             traits: [
-                'Leadership', 'Strategic Thinker', 'Team Management',
-                'Project Management', 'Communication', 'Technical Proficiency',
-                'Problem Solving', 'Innovation', 'Risk Management',
+                'Leadership', 'Strategic Planning', 'Team Management',
+                'Project Management', 'Communication', 'Technical Expertise',
+                'Problem-Solving', 'Innovation', 'Risk Management',
                 'Change Management', 'Quality Assurance', 'Regulatory Compliance'],
             category_summary: `Technology does not stand still, and neither should our skills. As innovations continue to shape the
                         landscape of our industries, it's imperative that we embrace lifelong learning and adaptability to
@@ -109,10 +108,11 @@ export default function app_data() {
                             'dates': 'August 2015 - February 2024',
                             'company': 'GenesisCare (formerly 21st Century Oncology)',
                             'highlights': [
-                                'Designed and implemented Asset IQ, an internal web-based application, aimed at enhancing operational efficiency through intuitive dashboards and reports.',
-                                'Integrated disparate data sources within Asset IQ to offer comprehensive and integrated views and metrics, facilitating informed, data-driven decision-making.',
-                                'Asset IQ was utilized across multiple centers by diverse cross-functional teams, including RT, Physics, Engineering, and Dosimetry, spanning various organizational levels from individual contributors to division executives.',
-                                'Collaborated on the development of Adaptivo, a patient dosimetry application, focusing on architecting a modern and user-friendly web front-end to enhance user experience.',
+                                'Developed the strategic planning for Asset IQ, communicated the vision, and secured Executive team support.',
+                                'Directed the development of Asset IQ, an internal web-based platform, strategically created to enhance operational efficiency through intuitive dashboards and features.',
+                                'Integrated disparate data sources within Asset IQ for comprehensive views, enabling data-informed decision-making.',
+                                'Key evangelist in the widespread adoption of Asset IQ across multiple departments, including RT, Physics, Engineering, and Dosimetry, and all organizational levels from individual contributors to executives.',
+                                'Played a pivotal role in the development of Adaptivo, a cutting-edge patient dosimetry application, by leading the architectural design efforts to create a modern and user-friendly web experience.',
                                 'Architected the design of Adaptivo\'s resilient processing pipeline, enabling support for asynchronous job queues and ensuring high availability of critical functionalities.',
                                 'Assisted in the deployment of Adaptivo into beta and production environments, providing support to various teams and ensuring seamless integration with existing workflows.',
                             ]
@@ -122,11 +122,11 @@ export default function app_data() {
                             'dates': 'January 2014 - August 2015',
                             'company': 'Accuray',
                             'highlights': [
-                                'Conceptualized and presented a visionary data collection and reporting solution for the TomoTherapy and Cyberknife radiation oncology products to the Executive team to secure the funding to build an analytics team.',
-                                'Managed the end-to-end project lifecycle, including roadmap planning, backlog management, and capacity planning, while empowering team members to drive towards project milestones, ensuring successful project execution and delivery.',
-                                'Designed and implemented a unified, quasi-realtime data collection technology for TomoTherapy and Cyberknife products, enabling seamless data transmission from global installations to the data-warehouse, enhancing data accessibility and analysis capabilities.',
+                                'Formulated and presented a forward-thinking data aggregation and analytics proposal to the Executive team, securing funding to establish an analytics team dedicated to enhancing the performance of TomoTherapy and CyberKnife radiation oncology products.',
+                                'Directed the end-to-end project lifecycle, including roadmap planning, backlog management, and capacity planning, while empowering team members to drive towards project milestones, ensuring successful project execution and delivery.',
+                                'Spearheaded the architecture and implementation of a unified, quasi-realtime data collection technology for TomoTherapy and Cyberknife products, enabling seamless data transmission from global installations to a centralized data-warehouse, optimizing data accessibility and analysis capabilities.',
                                 'Developed an optimized data model for the storage of collected data, prioritizing fast reads for reporting purposes while maintaining acceptable write speeds, ensuring efficient data retrieval and analysis.',
-                                'Engineered a custom web-based dashboard and reporting solution (Up Center) tailored to provide role-specific views of the data, empowering stakeholders to make data-driven decisions. This solution facilitated troubleshooting, enabled proactive service opportunities, and facilitated remote service solutions, enhancing overall operational effectiveness and customer satisfaction.',
+                                'Led the design of a custom web-based dashboard and reporting solution (Up Center) tailored to provide role-specific views of the data, empowering stakeholders to make data-driven decisions. This solution facilitated troubleshooting, enabled proactive service opportunities, and facilitated remote service solutions, enhancing overall operational effectiveness and customer satisfaction.',
                             ]
                         },
                         {
@@ -134,10 +134,8 @@ export default function app_data() {
                             'dates': '2011 - January 2014',
                             'company': 'Accuray',
                             'highlights': [
-                                'Led the development and research efforts to create innovative software applications aimed at enhancing operational efficiency and effectiveness for both internal and external customers.',
                                 'Spearheaded the development of TomoTherapy Quality Assurance (TQA), a user-friendly application designed to automate the collection and analysis of key metrics for machine QA within the HiArt system. This application revolutionized daily, monthly, annual, and as- needed testing processes, resulting in significantly improved operational efficiency and informed decision-making for medical physics staff.',
-                                'Pioneered the technical development of TomoLink, a cutting-edge application enabling remote diagnostics of the HiArt system. By automating publication of system data to a central data- warehouse, TomoLink provided invaluable proactive troubleshooting information, enhancing overall system reliability and customer support capabilities.',
-
+                                'Managed the technical development of TomoLink, a cutting-edge application enabling remote diagnostics of the HiArt system. By automating publication of system data to a central data- warehouse, TomoLink provided invaluable proactive troubleshooting information, enhancing overall system reliability and customer support capabilities.',
                             ]
                         }],
                 }
