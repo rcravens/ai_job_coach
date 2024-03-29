@@ -144,7 +144,7 @@ if job.is_valid():
             is_cover_letter_in_my_writing_style = st.checkbox('Use my writing style', value=True)
 
             create_cover_letter = st.form_submit_button('Create New Cover Letter')
-            refine_cover_letter = st.form_submit_button('Refine Cover Letter', disabled=job.cover_letter is None or len(job.cover_letter) == 0)
+            refine_cover_letter = st.form_submit_button('Refine Cover Letter')
 
             # Use OpenAI API to create cover letter
             if create_cover_letter:
