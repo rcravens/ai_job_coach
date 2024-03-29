@@ -20,10 +20,11 @@ class AiEngine:
                 self.cache = pickle.load(f)
 
     def get_prompt_response(self, messages: list) -> str:
-        md5 = self._md5_messages(messages)
-        if md5 in self.cache:
+
+        cache_response = self.get_from_cache(messages)
+        if cache_response is not None:
             print('cache hit')
-            return self.cache[md5]
+            return cache_response
 
         print('cache miss')
         summary_result = self.ai.chat.completions.create(
@@ -33,11 +34,24 @@ class AiEngine:
         )
 
         result = summary_result.choices[0].message.content
-        self.cache[md5] = result
-        with open('cache.pkl', 'wb') as f:
-            pickle.dump(self.cache, f)
+
+        self.add_to_cache(messages, result)
 
         return result
+
+    def get_from_cache(self, messages: list) -> str | None:
+        md5 = self._md5_messages(messages)
+        if md5 in self.cache:
+            print('cache hit')
+            return self.cache[md5]
+
+        return None
+
+    def add_to_cache(self, messages: list, response: str):
+        md5 = self._md5_messages(messages)
+        self.cache[md5] = response
+        with open('cache.pkl', 'wb') as f:
+            pickle.dump(self.cache, f)
 
     def clear_cache(self):
         self.cache = dict()
