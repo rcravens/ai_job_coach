@@ -2,7 +2,6 @@ export default function app_data() {
     return {
         sidebar: {
             name: 'Bob Cravens',
-            image: 'assets/img/cravens-profile-img.jpg',
             socials: [
                 {
                     name: 'LinkedIn',
@@ -24,7 +23,6 @@ export default function app_data() {
         },
         hero: {
             name: 'Bob Cravens',
-            image: 'assets/img/hero-bg-01.jpeg',
             words: ['Leader', 'Strategic Thinker', 'Innovator', 'Architect', 'Full Stack Developer'],
         },
         about: {
@@ -98,110 +96,85 @@ export default function app_data() {
                 ]
             }
         },
-        work_experiences: {
-            left: [
-                {
-                    title: 'Professional Experience',
-                    items: [
-                        {
-                            'title': 'Senior Manager Software Engineering',
-                            'dates': 'August 2015 - February 2024',
-                            'company': 'GenesisCare (formerly 21st Century Oncology)',
-                            'highlights': [
-                                'Developed the strategic planning for Asset IQ, communicated the vision, and secured Executive team support.',
-                                'Directed the development of Asset IQ, an internal web-based platform, strategically created to enhance operational efficiency through intuitive dashboards and features.',
-                                'Integrated disparate data sources within Asset IQ for comprehensive views, enabling data-informed decision-making.',
-                                'Key evangelist in the widespread adoption of Asset IQ across multiple departments, including RT, Physics, Engineering, and Dosimetry, and all organizational levels from individual contributors to executives.',
-                                'Played a pivotal role in the development of Adaptivo, a cutting-edge patient dosimetry application, by leading the architectural design efforts to create a modern and user-friendly web experience.',
-                                'Architected the design of Adaptivo\'s resilient processing pipeline, enabling support for asynchronous job queues and ensuring high availability of critical functionalities.',
-                                'Assisted in the deployment of Adaptivo into beta and production environments, providing support to various teams and ensuring seamless integration with existing workflows.',
-                            ]
-                        },
-                        {
-                            'title': 'Senior Manager System Analytics',
-                            'dates': 'January 2014 - August 2015',
-                            'company': 'Accuray',
-                            'highlights': [
-                                'Formulated and presented a forward-thinking data aggregation and analytics proposal to the Executive team, securing funding to establish an analytics team dedicated to enhancing the performance of TomoTherapy and CyberKnife radiation oncology products.',
-                                'Directed the end-to-end project lifecycle, including roadmap planning, backlog management, and capacity planning, while empowering team members to drive towards project milestones, ensuring successful project execution and delivery.',
-                                'Spearheaded the architecture and implementation of a unified, quasi-realtime data collection technology for TomoTherapy and Cyberknife products, enabling seamless data transmission from global installations to a centralized data-warehouse, optimizing data accessibility and analysis capabilities.',
-                                'Developed an optimized data model for the storage of collected data, prioritizing fast reads for reporting purposes while maintaining acceptable write speeds, ensuring efficient data retrieval and analysis.',
-                                'Led the design of a custom web-based dashboard and reporting solution (Up Center) tailored to provide role-specific views of the data, empowering stakeholders to make data-driven decisions. This solution facilitated troubleshooting, enabled proactive service opportunities, and facilitated remote service solutions, enhancing overall operational effectiveness and customer satisfaction.',
-                            ]
-                        },
-                        {
-                            'title': 'Research Software Manager',
-                            'dates': '2011 - January 2014',
-                            'company': 'Accuray',
-                            'highlights': [
-                                'Spearheaded the development of TomoTherapy Quality Assurance (TQA), a user-friendly application designed to automate the collection and analysis of key metrics for machine QA within the HiArt system. This application revolutionized daily, monthly, annual, and as- needed testing processes, resulting in significantly improved operational efficiency and informed decision-making for medical physics staff.',
-                                'Managed the technical development of TomoLink, a cutting-edge application enabling remote diagnostics of the HiArt system. By automating publication of system data to a central data- warehouse, TomoLink provided invaluable proactive troubleshooting information, enhancing overall system reliability and customer support capabilities.',
-                            ]
-                        }],
-                }
-            ],
-            right: [
-                {
-                    title: '&nbsp;',
-                    items: [
-                        {
-                            title: 'Lead Applied Physicist',
-                            dates: '2005 - 2011',
-                            company: 'TomoTherapy',
-                            highlights: [
-                                'Led the development and research initiatives aimed at creating software applications to enhance operational efficiency and effectiveness for both internal and external stakeholders.',
-                                'Directed the development of TomoTherapy Quality Assurance (TQA), a user-friendly application designed to streamline the collection and analysis of critical metrics for machine QA within the HiArt system. This innovative solution facilitated a more efficient and informed approach to daily, monthly, annual, and as-needed testing processes for medical physics staff.',
-                                'Orchestrated the technical development of TomoLink, an advanced application enabling remote diagnostics of the HiArt system. By establishing a centralized data publishing mechanism to a Customer Support location, TomoLink provided invaluable proactive troubleshooting information, enhancing system reliability and customer support capabilities.',
-                            ]
-                        },
-                        {
-                            title: 'Physicist',
-                            dates: '2003 - 2005',
-                            company: 'TomoTherapy',
-                            highlights: [
-                                'Played a pivotal role in enhancing the Quality Assurance processes for the TomoTherapy radiotherapy machine.',
-                                'Automated and streamlined the MVCT commissioning process. Eliminated the need for on-site visits by specialists by integrating commissioning into the manufacturing workflow. This optimized the manufacturing process, eliminated resource constraint, and reduced cost.',
-                                'Automated and streamlined the treatment planning commissioning process. Transformed a previously manual and time-consuming procedure requiring specialized expertise (Medical Physicist) into a streamlined process that reduced commissioning time from approximately 30 days to 2-3 days, significantly accelerating time-to-market.',
-                                'Led the development of hardware, software, and processes for dosimetric \'twinning\' of the TomoTherapy machine to a pre-created gold standard Treatment Planning System model. This twinning system allowed production to ramp up by reducing the need for specialized expertise (Medical Physicist). The gold standard models removed “snowflake models” from the install base allowing for more efficient customer support.',
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        education: {
-            left: [],
-            right: [
-                {
-                    title: 'Education',
-                    items: [
-                        {
-                            degree: 'PhD (all but dissertation) Electrical Engineering, Minor Physics',
-                            school: 'University of Wisconsin - Madison',
-                        },
-                        {
-                            degree: 'MSEE, Electrical Engineering',
-                            school: 'University of Wisconsin - Madison',
-                        },
-                        {
-                            degree: 'BSEE, Electrical Engineering',
-                            school: 'University of Wisconsin - Madison',
-                        }
-                    ]
-                }
-            ]
-        },
+        work_experiences: [
+            {
+                'title': 'Senior Manager Software Engineering',
+                'dates': 'August 2015 - February 2024',
+                'company': 'GenesisCare (formerly 21st Century Oncology)',
+                'highlights': [
+                    'Developed the strategic planning for Asset IQ, communicated the vision, and secured Executive team support.',
+                    'Directed the development of Asset IQ, an internal web-based platform, strategically created to enhance operational efficiency through intuitive dashboards and features.',
+                    'Integrated disparate data sources within Asset IQ for comprehensive views, enabling data-informed decision-making.',
+                    'Key evangelist in the widespread adoption of Asset IQ across multiple departments, including RT, Physics, Engineering, and Dosimetry, and all organizational levels from individual contributors to executives.',
+                    'Played a pivotal role in the development of Adaptivo, a cutting-edge patient dosimetry application, by leading the architectural design efforts to create a modern and user-friendly web experience.',
+                    'Architected the design of Adaptivo\'s resilient processing pipeline, enabling support for asynchronous job queues and ensuring high availability of critical functionalities.',
+                    'Assisted in the deployment of Adaptivo into beta and production environments, providing support to various teams and ensuring seamless integration with existing workflows.',
+                ]
+            },
+            {
+                'title': 'Senior Manager System Analytics',
+                'dates': 'January 2014 - August 2015',
+                'company': 'Accuray',
+                'highlights': [
+                    'Formulated and presented a forward-thinking data aggregation and analytics proposal to the Executive team, securing funding to establish an analytics team dedicated to enhancing the performance of TomoTherapy and CyberKnife radiation oncology products.',
+                    'Directed the end-to-end project lifecycle, including roadmap planning, backlog management, and capacity planning, while empowering team members to drive towards project milestones, ensuring successful project execution and delivery.',
+                    'Spearheaded the architecture and implementation of a unified, quasi-realtime data collection technology for TomoTherapy and Cyberknife products, enabling seamless data transmission from global installations to a centralized data-warehouse, optimizing data accessibility and analysis capabilities.',
+                    'Developed an optimized data model for the storage of collected data, prioritizing fast reads for reporting purposes while maintaining acceptable write speeds, ensuring efficient data retrieval and analysis.',
+                    'Led the design of a custom web-based dashboard and reporting solution (Up Center) tailored to provide role-specific views of the data, empowering stakeholders to make data-driven decisions. This solution facilitated troubleshooting, enabled proactive service opportunities, and facilitated remote service solutions, enhancing overall operational effectiveness and customer satisfaction.',
+                ]
+            },
+            {
+                'title': 'Research Software Manager',
+                'dates': '2011 - January 2014',
+                'company': 'Accuray',
+                'highlights': [
+                    'Spearheaded the development of TomoTherapy Quality Assurance (TQA), a user-friendly application designed to automate the collection and analysis of key metrics for machine QA within the HiArt system. This application revolutionized daily, monthly, annual, and as- needed testing processes, resulting in significantly improved operational efficiency and informed decision-making for medical physics staff.',
+                    'Managed the technical development of TomoLink, a cutting-edge application enabling remote diagnostics of the HiArt system. By automating publication of system data to a central data- warehouse, TomoLink provided invaluable proactive troubleshooting information, enhancing overall system reliability and customer support capabilities.',
+                ]
+            },
+            {
+                title: 'Lead Applied Physicist',
+                dates: '2005 - 2011',
+                company: 'TomoTherapy',
+                highlights: [
+                    'Led the development and research initiatives aimed at creating software applications to enhance operational efficiency and effectiveness for both internal and external stakeholders.',
+                    'Directed the development of TomoTherapy Quality Assurance (TQA), a user-friendly application designed to streamline the collection and analysis of critical metrics for machine QA within the HiArt system. This innovative solution facilitated a more efficient and informed approach to daily, monthly, annual, and as-needed testing processes for medical physics staff.',
+                    'Orchestrated the technical development of TomoLink, an advanced application enabling remote diagnostics of the HiArt system. By establishing a centralized data publishing mechanism to a Customer Support location, TomoLink provided invaluable proactive troubleshooting information, enhancing system reliability and customer support capabilities.',
+                ]
+            },
+            {
+                title: 'Physicist',
+                dates: '2003 - 2005',
+                company: 'TomoTherapy',
+                highlights: [
+                    'Played a pivotal role in enhancing the Quality Assurance processes for the TomoTherapy radiotherapy machine.',
+                    'Automated and streamlined the MVCT commissioning process. Eliminated the need for on-site visits by specialists by integrating commissioning into the manufacturing workflow. This optimized the manufacturing process, eliminated resource constraint, and reduced cost.',
+                    'Automated and streamlined the treatment planning commissioning process. Transformed a previously manual and time-consuming procedure requiring specialized expertise (Medical Physicist) into a streamlined process that reduced commissioning time from approximately 30 days to 2-3 days, significantly accelerating time-to-market.',
+                    'Led the development of hardware, software, and processes for dosimetric \'twinning\' of the TomoTherapy machine to a pre-created gold standard Treatment Planning System model. This twinning system allowed production to ramp up by reducing the need for specialized expertise (Medical Physicist). The gold standard models removed “snowflake models” from the install base allowing for more efficient customer support.',
+                ]
+            }
+        ],
+        education: [
+            {
+                degree: 'PhD (all but dissertation) Electrical Engineering, Minor Physics',
+                school: 'University of Wisconsin - Madison',
+            },
+            {
+                degree: 'MSEE, Electrical Engineering',
+                school: 'University of Wisconsin - Madison',
+            },
+            {
+                degree: 'BSEE, Electrical Engineering',
+                school: 'University of Wisconsin - Madison',
+            }
+        ],
         portfolio: {
             summary: `The following are a few projects where my contributions have been instrumental to the success.
                         In all of these projects I served in a leadership role and contributed technically as an architect / full stack developer.
                         <strong>Click on each for additional details.</strong>`,
-            filters: ['web', 'app'],
-            projects: {
-                'gc_assetiq': {
+            projects: [
+                {
                     name: 'Asset IQ',
-                    short_name: 'Asset IQ',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/assetiq-01.jpg',
                     category: 'Full Stack Web Development',
                     company: 'GenesisCare (formerly 21st Century Oncology)',
                     urls: {},
@@ -211,12 +184,6 @@ export default function app_data() {
                         'text-bg-success': ['MySQL', 'Redis', 'Ubuntu'],
                         'text-bg-info': ['Active Directory', 'Workday', 'ADP', 'Azure']
                     },
-                    images: [
-                        'assets/img/portfolio/assetiq-01-clean.jpg',
-                        'assets/img/portfolio/assetiq-02-clean.jpg',
-                        'assets/img/portfolio/assetiq-03-clean.jpg',
-                        'assets/img/portfolio/assetiq-04-clean.jpg',
-                    ],
                     paragraphs: [
                         'Delivering a comprehensive clinical operations platform utilized by executives, operational leaders, and team members across various departments including Regulatory, Dosimetry, Physics, Engineering, BI, and HR. Our business objectives are to:',
                         `<ul>
@@ -228,11 +195,8 @@ export default function app_data() {
                 </ul>`
                     ]
                 },
-                '21c_adaptivo': {
+                {
                     name: 'Adaptivo',
-                    short_name: 'Adaptivo',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/adaptivo-01.jpg',
                     category: 'Full Stack Web Development',
                     company: '21st Oncology / Standard Imaging',
                     urls: {
@@ -243,25 +207,14 @@ export default function app_data() {
                         'text-bg-primary': ['PHP', 'Python', 'Matlab'],
                         'text-bg-success': ['MySQL', 'Redis', 'Ubuntu'],
                     },
-                    images: [
-                        'assets/img/portfolio/adaptivo-01.png',
-                        'assets/img/portfolio/adaptivo-02.png',
-                        'assets/img/portfolio/adaptivo-03.png',
-                        'assets/img/portfolio/adaptivo-04.png',
-                        'assets/img/portfolio/adaptivo-05.png',
-                        'assets/img/portfolio/adaptivo-06.png',
-                    ],
                     paragraphs: [
                         'Patient quality assurance application used in radio-therapy (RT) departments to compare delivered versus planned treatment volumes. Expected dose is computed and compared to the actual delivered dose measured using the external panel. This allows the oncology team to alter the treatment plan when anatomical changes occur that result in unacceptable planned versus actual differences. This application is an FDA product that is marketed by Standard Imaging.',
                         'Development included an API that allowed the integration of Adaptivo reports into the billing process for the clinic. This resulted in north of $10 million per year in revenue.',
                         'Each clinic would have their own Adaptivo server deployed locally. This improved calculation performance by placing the server closer to the patient data source. The API allowed the development of a centralized server dashboard to monitor each server.'
                     ]
                 },
-                'tomo_upcenter': {
+                {
                     name: 'Up Center',
-                    short_name: 'Up Center',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/upcenter-01.jpg',
                     category: 'Full Stack Web Development',
                     company: 'Accuray / TomoTherapy',
                     urls: {},
@@ -271,13 +224,6 @@ export default function app_data() {
                         'text-bg-success': ['IIS', 'SQL Server', 'RabbitMQ'],
                         'text-bg-info': ['Remote Data Collection Agent', 'Centralized Data Warehouse']
                     },
-                    images: [
-                        'assets/img/portfolio/upcenter-01.png',
-                        'assets/img/portfolio/upcenter-02.png',
-                        'assets/img/portfolio/upcenter-03.png',
-                        'assets/img/portfolio/upcenter-04.png',
-                        'assets/img/portfolio/upcenter-01.png',
-                    ],
                     paragraphs: [
                         `Operational dashboard for monitoring and remotely troubleshooting the TomoTherapy radio-therapy (RT)
                 treatment machines throughout the worldwide installation base. The TomoLink component was deployed as part
@@ -293,11 +239,8 @@ export default function app_data() {
                 </ul>`
                     ]
                 },
-                'tomo_tqa': {
+                {
                     name: 'TomoTherapy Quality Assurance (TQA)',
-                    short_name: 'TQA',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/tqa-01.jpg',
                     category: 'Full Stack Web Development',
                     company: 'TomoTherapy',
                     urls: {
@@ -309,14 +252,6 @@ export default function app_data() {
                         'text-bg-success': ['IIS', 'SQL Server', 'RabbitMQ'],
                         'text-bg-info': ['Remote Data Collection Agent']
                     },
-                    images: [
-                        'assets/img/portfolio/tqa-01.png',
-                        'assets/img/portfolio/tqa-02.png',
-                        'assets/img/portfolio/tqa-03.png',
-                        'assets/img/portfolio/tqa-04.png',
-                        'assets/img/portfolio/tqa-05.png',
-                        'assets/img/portfolio/tqa-06.png',
-                    ],
                     paragraphs: [
                         `TQA (TomoTherapy Quality Assurance) is a calendar based tool that streamlines machine QA by providing
                     automated data collection, analysis, and trending tools. TQA saves significant time and empowers
@@ -330,11 +265,8 @@ export default function app_data() {
                     licensed individually by the business.`
                     ]
                 },
-                'diglabs_memberowl': {
+                {
                     name: 'Member Owl',
-                    short_name: 'Member Owl',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/memberowl-01.jpg',
                     category: 'Full Stack Web Development',
                     company: 'Dig Labs',
                     urls: {
@@ -346,28 +278,14 @@ export default function app_data() {
                         'text-bg-success': ['MySQL', 'Redis', 'Ubuntu'],
                         'text-bg-info': ['PaySimple', 'MailChimp', 'Twilio', 'Mailgun'],
                     },
-                    images: [
-                        'assets/img/portfolio/memberowl-01.png',
-                        'assets/img/portfolio/memberowl-02.jpg',
-                        'assets/img/portfolio/memberowl-03.jpg',
-                        'assets/img/portfolio/memberowl-04.jpg',
-                        'assets/img/portfolio/memberowl-05.jpg',
-                        'assets/img/portfolio/memberowl-06.jpg',
-                        'assets/img/portfolio/memberowl-07.jpg',
-                        'assets/img/portfolio/memberowl-08.jpg',
-
-                    ],
                     paragraphs: [
                         `Member Owl is a professional web-based membership solution developed to help manage membership data, automate billing, and improve retention.`,
                         `Member Owl partners with industry leaders to learn their secret sauce. This knowledge is transformed into features and workflows that users leverage in their daily operations.`,
                         `Member Owl leverages cloud infrastructure to provide a reliable, secure and safe hosting environment.`,
                     ]
                 },
-                'diglabs_bids': {
+                {
                     name: 'BIDS - Online Auctions',
-                    short_name: 'BIDS',
-                    filter: 'web',
-                    image: 'assets/img/portfolio/bids.jpg',
                     category: 'Full Stack Web Development',
                     company: 'Dig Labs',
                     urls: {
@@ -379,26 +297,13 @@ export default function app_data() {
                         'text-bg-success': ['MySQL', 'Redis', 'Ubuntu'],
                         'text-bg-info': ['Stripe', 'Mailgun', 'Twilio', 'AWS'],
                     },
-                    images: [
-                        'assets/img/portfolio/bids.png',
-                        'assets/img/portfolio/bids-03.png',
-                        'assets/img/portfolio/bids-04.png',
-                        'assets/img/portfolio/bids-05.png',
-                        'assets/img/portfolio/bids-06.png',
-                        'assets/img/portfolio/bids-07.png',
-                        'assets/img/portfolio/bids-08.png',
-                        'assets/img/portfolio/bids-09.png',
-                    ],
                     paragraphs: [
                         `BIDS is an easy-to-use low-cost solution for organizations to manage and host a professional auction.`,
                         `BIDS leverages best-in-class integrations to provide secure payment collection.`,
                     ]
                 },
-                'tomo_twinning': {
+                {
                     name: 'Twinning Platform',
-                    short_name: 'Twinning Platform',
-                    filter: 'app',
-                    image: 'assets/img/portfolio/twinning_platform.jpg',
                     category: 'Application &amp; Integrated Hardware',
                     company: 'TomoTherapy',
                     urls: {
@@ -409,13 +314,6 @@ export default function app_data() {
                         'text-bg-primary': ['Visual C++'],
                         'text-bg-info': ['Serial Communication', '2D Motion', 'Electrometer'],
                     },
-                    images: [
-                        'assets/img/portfolio/twin-01.png',
-                        'assets/img/portfolio/twin-02.png',
-                        'assets/img/portfolio/twin-03.png',
-                        'assets/img/portfolio/twin-04.png',
-                        'assets/img/portfolio/twin-06.png',
-                    ],
                     paragraphs: [
                         `Developed a platform that included hardware and software and was used by the Manufacturing Team to dosimetrically
                     twin each machine during the manufacturing process to a gold standard.`,
@@ -428,11 +326,8 @@ export default function app_data() {
                     Manufacturing Techs and takes less than 1 hour.`,
                     ]
                 },
-                'tomo_tps_model': {
+                {
                     name: 'Treatment Planning Model',
-                    short_name: 'Treatment Planning Model',
-                    filter: 'app',
-                    image: 'assets/img/portfolio/tomotherapy_machine.jpg',
                     category: 'Application',
                     company: 'TomoTherapy',
                     urls: {},
@@ -441,11 +336,6 @@ export default function app_data() {
                         'text-bg-primary': ['Visual C++'],
                         'text-bg-info': ['Cluster Computing'],
                     },
-                    images: [
-                        'assets/img/portfolio/tomotherapy_machine.png',
-                        'assets/img/portfolio/tomo_no_covers.png',
-                        'assets/img/portfolio/tomo-dose.png',
-                    ],
                     paragraphs: [
                         `Automated the optimization of a treatment model to a set of measured data. The measured data set included output,
                     energy, transverse profiles, and longitudinal profiles for each field width. The optimization process then
@@ -457,11 +347,8 @@ export default function app_data() {
                     accomplish manually. This automated solution reduced the time to a few hours.`,
                     ]
                 },
-                'tomo_mvct': {
+                {
                     name: 'Mega-Voltage CT (MVCT) Commissioning',
-                    short_name: 'MVCT Commissioning',
-                    filter: 'app',
-                    image: 'assets/img/portfolio/tomo_mvct.png',
                     category: 'Application',
                     company: 'TomoTherapy',
                     urls: {},
@@ -470,12 +357,6 @@ export default function app_data() {
                         'text-bg-primary': ['Visual C++'],
                         'text-bg-info': ['CT Reconstruction', 'Image Processing'],
                     },
-                    images: [
-                        'assets/img/portfolio/tomo_mvct.png',
-                        'assets/img/portfolio/mvct-02.png',
-                        'assets/img/portfolio/mvct-03.png',
-                        'assets/img/portfolio/mvct-04.jpg',
-                    ],
                     paragraphs: [
                         `This feature set was added to an in-house engineering tool and allowed the Manufacturing Techs to
                     collect data and commission the mega-voltage CT (MVCT) imaging system on the TomoTherapy treatment machine.`,
@@ -486,76 +367,8 @@ export default function app_data() {
                     This new solution saved travel costs and only requires 1 hour by a Manufacturing Tech.`,
                     ]
                 },
-            }
+            ]
         },
-        testimonials: [
-            {
-                name: 'Jessica Vanhooser',
-                title: 'GenesisCare - Director Revenue Integrity',
-                text: `I would like to extend my sincere recommendation on behalf of Robert Cravens. Robert is a remarkable individual who has made significant contributions to Genesiscare. As Robert’s teammate at Genesiscare for the last 2 years, I’ve benefited from his extensive knowledge, endless ability to problem solve, and his tireless work ethic. Robert’s expert-level knowledge quickly stood out and is something that I have come to count on tremendously.
-                                    <br/><br/>
-                                    What is particularly noteworthy is Robert’s creation of and maintaining the Reconciliation Work Tool that my medical coding team uses daily to track potential missed codes, coding errors, and is a communication tool between the coders and the offices. Robert seamlessly created an option to have superusers so that processes could be more streamlined within the tool. He is consistently called upon to make changes at the last minute and always answers the call swiftly and efficiently. He has been a vital part of our team.
-                                    <br/><br/>
-                                    Robert’s dedication, professionalism, and results-driven mindset make him an invaluable asset, and I am confident he will continue to make significant contributions in his professional journey. He has an excellent rapport with many employees within our organization and I wholeheartedly recommend him for any endeavor he chooses to pursue.`,
-                image: 'assets/img/testimonials/jessica-vanhooser.jpeg',
-            },
-            {
-                name: 'Amber Smith',
-                title: 'GenesisCare - Head of Radiation Therapy Clinical Operations and Transformation',
-                text: `Bob Cravens has my highest recommendation, and any future collaborator, employer, or teammate will find that they are lucky to have him on board. Not only is Bob a master at his craft, but he has the rare ability to understand the user, interpret and translate the languages of IT and Operations (both terms used very broadly) and bridge the gap seamlessly. I worked with Bob as a business partner/customer requesting tools to provide visibility to leaders on operational efficiencies, rostering, and business metrics. Despite challenging data quality, he translated those business requests into easy to use dashboards. He is professional and solution focused, methodical and meticulous, accessible and responsive. I cannot recommend him enough.`,
-                image: 'assets/img/testimonials/amber_smith.jpeg',
-            },
-            {
-                name: 'Gary Burns',
-                title: 'GenesisCare - Director of Engineering Services',
-                text: `Bob has an outstanding work ethic and was a key contributor to a major program rollout we were assigned. This project involved working with leaders from several departments and a tight timeline. Bob was able to take input from multiple trade groups and make appropriate updates efficiently. He was an excellent communicator throughout the process and an invaluable team member. This project wouldn't have succeeded without his efforts. Bob would be an excellent addition to any team you have, or a new team that is being assembled.`,
-                image: 'assets/img/testimonials/gary_burns.jpeg',
-            },
-            {
-                name: 'Gustavo Olivera',
-                title: '21st Century Oncology - CTO and acting COO',
-                text: `I had the privilege of supervising Bob during my tenure as the VP of Research at TomoTherapy and later as the CTO at GenesisCare (formerly 21st Century Oncology). Throughout our time working together, Bob consistently demonstrated an exceptional talent for dissecting intricate business and technical processes. His ability to meticulously map out these complexities and devise innovative solutions significantly enhanced our operational efficiency and effectiveness.
-                                    <br/><br/>
-                                    One of Bob's most remarkable qualities is his knack for identifying areas of improvement and implementing strategies that not only streamline workflows but also yield cost savings for the organization. His forward-thinking approach and dedication to excellence have undoubtedly made a lasting impact on our team and the broader scope of our projects.
-                                    <br/><br/>
-                                    I wholeheartedly endorse Bob for any role that demands a blend of strategic thinking, technical acumen, and a passion for driving positive change. He is a valuable asset to any organization and a pleasure to work alongside.`,
-                image: 'assets/img/testimonials/gustavo-olivera.jpeg',
-            },
-            {
-                name: 'Leandro Barreca',
-                title: 'GenesisCare - Executive Director Regulatory Affairs',
-                text: `During my tenure as the Executive Director of Regulatory Affairs at GenesisCare, Bob led the development of an integrated solution designed to efficiently manage regulatory and quality data crucial for our clinics. This comprehensive system effectively streamlined the oversight of accreditation, licenses, and audit data, playing a pivotal role in ensuring clinics' compliance with both local and federal requirements.`,
-                image: 'assets/img/testimonials/leandro_barreca.jpeg',
-            },
-            {
-                name: 'Trish Rasmus',
-                title: 'GenesisCare - VP of Clinical Services and Operations',
-                text: `It is my pleasure to endorse Bob Cravens for employment in your organization.
-                                    <br/><br/>
-                                    I have known Bob for over 3 years, during which he worked as a Senior Software Engineering Manager.
-                                    <br/><br/>
-                                    Bob partnered with my team on over 14 projects during the last 3 years. These projects
-                                    involved Bob leveraging technology to enhance our business performance. Including
-                                    automated integration of our clinical data to be used to manage operational and clinical
-                                    excellence metrics. Building rostering web applications. Designing and implementing
-                                    operational dashboards to improve clinical workflows.
-                                    <br/><br/>
-                                    Bobs contribution to these projects was exemplary. He was agile and adaptable to the
-                                    changing needs of the business throughout our work together. He was results driven
-                                    and was exceptional at bridging the gap between strategy and reality. I am confident
-                                    that he will display a high degree of commitment and discharge his job duties and
-                                    responsibilities with diligence in your organization.
-                                    <br/><br/>
-                                    I recommend Bob without reservations.`,
-                image: 'assets/img/testimonials/trish_rasmus.jpeg',
-            },
-            {
-                name: 'Carlos A Rodriguez',
-                title: 'GenesisCare - VP Data and Insights',
-                text: `I highly recommend Bob Cravens, for his understanding of application development and innovation in the healthcare industry. He creates strong relationships and mentors team members to obtain strong results.He has delivered solutions that positively impact each team in the company. He has a unique collaboration approach to get business users engaged in their solution making it usable and adaptable in a short timeframe. It is a pleasure to work with him.`,
-                image: 'assets/img/testimonials/carlos_rodriguez.jpeg',
-            }
-        ],
         contacts: [
             {
                 title: 'Email:',

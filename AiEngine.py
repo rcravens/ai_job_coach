@@ -7,7 +7,9 @@ import openai as ai
 
 
 class AiEngine:
-    def __init__(self, api_key):
+    def __init__(self, api_key, is_debug=False):
+        self.is_debug = is_debug
+
         ai.api_key = api_key
         self.ai = ai
         self.models = ['gpt-3.5-turbo', 'gpt-4', 'gpt-4-turbo-preview']
@@ -27,6 +29,9 @@ class AiEngine:
             return cache_response
 
         print('cache miss')
+        if self.is_debug:
+            print(messages)
+            
         summary_result = self.ai.chat.completions.create(
             model=self.selected_model,
             temperature=self.temperature,
@@ -34,6 +39,8 @@ class AiEngine:
         )
 
         result = summary_result.choices[0].message.content
+        if self.is_debug:
+            print(result)
 
         self.add_to_cache(messages, result)
 

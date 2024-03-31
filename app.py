@@ -19,7 +19,7 @@ candidate_name = os.getenv('CANDIDATE_NAME')
 
 # Create instance of AI engine
 if 'ai' not in st.session_state:
-    ai = AiEngine(ai_api_key)
+    ai = AiEngine(ai_api_key, is_debug=False)
     st.session_state['ai'] = ai
 ai = st.session_state['ai']
 
