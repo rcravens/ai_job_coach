@@ -19,7 +19,7 @@ class Advisor(BaseAgent):
 
         context = {
             'job_description': job.job_description,
-            'key_required_skills': job.top_required_skills,
+            'key_required_skills': job.top_required_skills.keys(),
             'candidate_strengths': job.strengths,
             'candidates_resume': candidate.resume_text,
             'user_prompt': prompt

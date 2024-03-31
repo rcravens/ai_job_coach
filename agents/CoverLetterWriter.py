@@ -23,7 +23,7 @@ class CoverLetterWriter(BaseAgent):
             'company_name': job.company,
             'hiring_manager': job.hiring_manager,
             'source': job.source,
-            'key_required_skills': job.top_required_skills,
+            'key_required_skills': job.top_required_skills.keys(),
             'candidate_strengths': job.strengths,
             'candidate_name': candidate.candidate_name,
             'candidates_resume': candidate.resume_text,
