@@ -42,7 +42,6 @@ class AiEngine:
     def get_from_cache(self, messages: list) -> str | None:
         md5 = self._md5_messages(messages)
         if md5 in self.cache:
-            print('cache hit')
             return self.cache[md5]
 
         return None

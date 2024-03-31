@@ -35,7 +35,7 @@ class Coach:
 
         # Build the prompt
         self.job.top_required_skills = dict()
-        response = self.answer_question('Given the job description, please identify a list of top 10 key skills  needed to be successful in this position. Please return the skills and the reason why that skill is important. Each skill will be on a new line in the following format: Skill - Reason', False)
+        response = self.answer_question('Given the job description, please identify a list of top 10 key skills needed to be successful in this position. Please return the skills and the reason why that skill is important. Each skill will be on a new line in the following format: Skill - Reason', False)
 
         result = dict()
         skills = response.splitlines()
