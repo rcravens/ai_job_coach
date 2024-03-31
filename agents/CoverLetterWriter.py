@@ -19,6 +19,10 @@ class CoverLetterWriter(BaseAgent):
 
         context = {
             'job_description': job.job_description,
+            'job_title': job.job_title,
+            'company_name': job.company,
+            'hiring_manager': job.hiring_manager,
+            'source': job.source,
             'key_required_skills': job.top_required_skills,
             'candidate_strengths': job.strengths,
             'candidate_name': candidate.candidate_name,
@@ -52,7 +56,7 @@ class CoverLetterWriter(BaseAgent):
         if is_rewrite:
             return """
                 You have developed the following process that generates the best possible rewrite results:
-                1. Review the job_description and key_required_skills
+                1. Review the job_title, company, hiring_manager, source, job_description and key_required_skills
                 2. Review the candidates_resume and candidate_strengths
                 3. The candidate's name is provided by candidate_name
                 4. Given the key_required_skills and the candidate_strengths be sure to highlight how the candidate is a great fit
@@ -61,7 +65,7 @@ class CoverLetterWriter(BaseAgent):
 
         return """
             You have developed the following process that generates the best possible results:
-            1. Review the job_description and key_required_skills
+            1. Review the job_title, company, hiring_manager, source, job_description and key_required_skills
             2. Review the candidates_resume and candidate_strengths
             3. The candidate's name is provided by candidate_name
             4. Given the key_required_skills and the candidate_strengths be sure to highlight how the candidate is a great fit
