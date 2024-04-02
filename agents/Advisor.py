@@ -1,10 +1,10 @@
 from AiEngine import AiEngine
 from Candidate import Candidate
 from Job import Job
-from agents.BaseAgent import BaseAgent
+from agents.BaseAiEngineAgent import BaseAiEngineAgent
 
 
-class Advisor(BaseAgent):
+class Advisor(BaseAiEngineAgent):
     def __init__(self, ai: AiEngine, candidate: Candidate, job: Job, prompt: str, is_first_person: bool = True):
         role = 'Advisor'
 

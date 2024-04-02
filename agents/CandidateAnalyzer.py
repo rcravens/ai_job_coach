@@ -1,10 +1,10 @@
 from AiEngine import AiEngine
 from Candidate import Candidate
 from Job import Job
-from agents.BaseAgent import BaseAgent
+from agents.BaseAiEngineAgent import BaseAiEngineAgent
 
 
-class CandidateAnalyzer(BaseAgent):
+class CandidateAnalyzer(BaseAiEngineAgent):
     def __init__(self, ai: AiEngine, candidate: Candidate, job: Job, is_find_strengths: bool = True):
         self.is_find_strengths = is_find_strengths
 

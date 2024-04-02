@@ -1,10 +1,10 @@
 from AiEngine import AiEngine
 from Candidate import Candidate
 from Job import Job
-from agents.BaseAgent import BaseAgent
+from agents.BaseAiEngineAgent import BaseAiEngineAgent
 
 
-class CoverLetterWriter(BaseAgent):
+class CoverLetterWriter(BaseAiEngineAgent):
     def __init__(self, ai: AiEngine, candidate: Candidate, job: Job, additional_guidance=None, is_rewrite=False, use_writing_style: bool = True):
         role = 'Cover Letter Writer'
 

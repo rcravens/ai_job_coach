@@ -1,9 +1,9 @@
 from AiEngine import AiEngine
 from Job import Job
-from agents.BaseAgent import BaseAgent
+from agents.BaseAiEngineAgent import BaseAiEngineAgent
 
 
-class JobDescriptionAnalyzer(BaseAgent):
+class JobDescriptionAnalyzer(BaseAiEngineAgent):
     def __init__(self, ai: AiEngine, job: Job):
         role = 'Job Description Analyzer'
         background = """
