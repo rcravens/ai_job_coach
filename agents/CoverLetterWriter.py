@@ -20,11 +20,11 @@ class CoverLetterWriter(BaseAgent):
         context = {
             'job_description': job.job_description,
             'job_title': job.job_title,
-            'company_name': job.company,
+            'company_name': job.company_name,
             'hiring_manager': job.hiring_manager,
             'source': job.source,
             'key_required_skills': job.top_required_skills.keys(),
-            'candidate_strengths': job.strengths,
+            'candidate_strengths': job.strengths.keys(),
             'candidate_name': candidate.candidate_name,
             'candidates_resume': candidate.resume_text,
         }

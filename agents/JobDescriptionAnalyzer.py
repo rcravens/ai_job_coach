@@ -23,9 +23,9 @@ class JobDescriptionAnalyzer(BaseAgent):
             'job_description': job.job_description
         }
         desired_format = """
-            Your output should only contain the top 10 skills required to be successful at this job.
-            Your output should be a list without any bullets. No number bullets. No dash bullets. No bullets at all.
-            Each with each skill on a separate line using the following format:
-            Skill - Reason
+        [{
+            "skill": "Leadership",
+            "reason": "Reason why this skill is important"
+        }]
         """
-        super().__init__(ai, role, background, goal, context, instructions, output_format=desired_format)
+        super().__init__(ai, role, background, goal, context, instructions, output_format=desired_format, is_json=True)

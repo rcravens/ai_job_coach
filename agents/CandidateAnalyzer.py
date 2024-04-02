@@ -15,6 +15,7 @@ class CandidateAnalyzer(BaseAgent):
         background = f"""
             You are an expert in comparing resumes to job descriptions and generating a top 5 list of {goal_type} for the candidate.
             You are extremely thorough and careful about your analysis.
+            Your results should be in valid JSON format.
         """
 
         goal = f'Create a top 5 list of {goal_type}'
@@ -25,11 +26,9 @@ class CandidateAnalyzer(BaseAgent):
             'job_description': job.job_description,
             'candidates_resume': candidate.resume_text
         }
-        desired_format = f"""
-            Your output should only contain the top 5 list.
-            Your output should be numbered list containing exactly 5 items.
-        """
-        super().__init__(ai, role, goal, background, context, instructions, output_format=desired_format)
+        desired_format = self.create_desired_format()
+
+        super().__init__(ai, role, goal, background, context, instructions, output_format=desired_format, is_json=True)
 
     def create_instructions(self) -> str:
         if self.is_find_strengths:
@@ -44,4 +43,28 @@ class CandidateAnalyzer(BaseAgent):
                 1. Compare the job_description and key_required_skills with the candidates_resume
                 2. Create a top 5 list of examples where the candidate is lacking experience that is mentioned in the job description.
                 3. For each weakness provide recommendations on how to gain this experience
+        """
+
+    def create_desired_format(self):
+        if self.is_find_strengths:
+            return """
+            [{
+                "strength": "Leadership",
+                "examples": [
+                    "Example number 1",
+                    "Example number 2",
+                    "Example number 3"
+                ]
+            }]
+            """
+
+        return """
+        [{
+            "weakness": "Leadership",
+            "recommendations": [
+                "Recommendation number 1",
+                "Recommendation number 2",
+                "Recommendation number 3"
+            ]
+        }]
         """

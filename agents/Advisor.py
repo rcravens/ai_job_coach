@@ -20,7 +20,8 @@ class Advisor(BaseAgent):
         context = {
             'job_description': job.job_description,
             'key_required_skills': job.top_required_skills.keys(),
-            'candidate_strengths': job.strengths,
+            'candidate_strengths': job.strengths.keys(),
+            'candidate_weaknesses': job.weaknesses.keys(),
             'candidates_resume': candidate.resume_text,
             'user_prompt': prompt
         }
@@ -28,9 +29,9 @@ class Advisor(BaseAgent):
         instructions = """
             You have developed the following process that generates the best possible results:
             1. Review the job_description and key_required_skills
-            2. Review the candidates_resume and candidate_strengths
+            2. Review the candidates_resume and candidate_strengths and candidate_weaknesses
             3. Respond to the user_prompt 
-"""
+        """
 
         output_format = None
         if is_first_person:

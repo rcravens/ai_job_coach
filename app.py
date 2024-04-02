@@ -31,6 +31,7 @@ candidate = st.session_state['candidate']
 
 # Create instance of job description
 if 'job' not in st.session_state:
+    print('creating new job')
     job = Job()
     st.session_state['job'] = job
 job = st.session_state['job']
@@ -53,11 +54,11 @@ with st.sidebar:
     st.divider()
 
     st.subheader('Job Description')
-    job_description = st.text_area('Pasted Job Description', height=200)
-    job.job_title = st.text_input('Job Title', '[Job Title]')
-    job.company = st.text_input('Company Name', '[Company Name]')
-    job.hiring_manager = st.text_input('Hiring Manager', '[Hiring Manager]')
-    job.source = st.text_input('Source of Job Description', '[Source]')
+    job_description = st.text_area('Pasted Job Description', job.job_description, height=200)
+    job.job_title = st.text_input('Job Title', job.job_title)
+    job.company_name = st.text_input('Company Name', job.company_name)
+    job.hiring_manager = st.text_input('Hiring Manager', job.hiring_manager)
+    job.source = st.text_input('Source of Job Description', job.source)
 
     st.divider()
 
@@ -79,10 +80,11 @@ if job_description != job.job_description:
 
 if job.is_valid():
     # Main page
-    tab0, tab1, tab2, tab3 = st.tabs(['Analysis', 'Ask The Coach', 'Cover Letter', 'Word Cloud'])
+    tab0, tab1, tab2, tab3, tab4 = st.tabs(['Analysis', 'Ask The Coach', 'Cover Letter', 'Word Cloud', 'Company News'])
 
     with tab0:
         if job.is_valid():
+            st.title(job.company_name)
             st.subheader('Key Job Skills')
 
             df = pd.DataFrame(job.top_required_skills.items(), columns=['Skill', 'Reason'])
@@ -91,12 +93,20 @@ if job.is_valid():
             st.divider()
 
             st.subheader('Strengths')
-            st.write(job.strengths)
+            strengths_df = pd.DataFrame(job.strengths.items(), columns=['Strength', 'Examples'])
+            strengths_df['Examples'] = strengths_df['Examples'].apply(lambda x: '--||--'.join(x))
+            md = strengths_df.to_html(index=False)
+            md = md.replace('--||--', '<br><br>')
+            st.markdown(md, unsafe_allow_html=True)
 
             st.divider()
 
             st.subheader('Weaknesses')
-            st.write(job.weaknesses)
+            weaknesses_df = pd.DataFrame(job.weaknesses.items(), columns=['Weakness', 'Recommendations'])
+            weaknesses_df['Recommendations'] = weaknesses_df['Recommendations'].apply(lambda x: '--||--'.join(x))
+            md = weaknesses_df.to_html(index=False)
+            md = md.replace('--||--', '<br><br>')
+            st.markdown(md, unsafe_allow_html=True)
         else:
             st.write('Please fill out the job description first.')
 
@@ -107,7 +117,7 @@ if job.is_valid():
     
             Let AI help answer questions about your work experience and employment opportunities. Here are a few example questions:
     
-            ### General
+            ### Experience Specific
             - What are the top 10 industries where my work experience is relevant?
             - What are the top 5 most likely roles that match my work experience?
             - Can you create a list of all my previous roles?
@@ -123,7 +133,7 @@ if job.is_valid():
                     )
         with st.form('q_and_a_form'):
             prompt = st.text_area('Based on your resume, what would you like to summarize?', height=200)
-            is_summary_in_my_writing_style = st.checkbox('Use my writing style', value=True)
+            is_summary_in_my_writing_style = st.checkbox('Respond in first person', value=True)
 
             summarize_submitted = st.form_submit_button('Generate Summary')
 
@@ -186,5 +196,43 @@ if job.is_valid():
             plt.axis("off")
             st.write('Job Description Cloud')
             st.pyplot(fig)
+
+    with tab4:
+        st.header('Company News')
+
+        with st.form('company_news_form'):
+            additional_search_text = st.text_input('Search Text')
+            number_of_articles = st.number_input('Number of Articles', value=10, min_value=1, max_value=20)
+
+            search = st.form_submit_button('Search')
+
+            # Use OpenAI API to create cover letter
+            if search:
+                coach.analyze_company(number_of_articles, additional_search_text)
+
+        if job.company_news is not None:
+            for i in range(0, len(job.company_news), 2):
+                article1 = job.company_news[i]
+                article2 = job.company_news[i + 1] if i + 1 < len(job.company_news) else None
+                col1, col2 = st.columns(2)
+                with col1:
+                    art = st.container(border=True)
+                    art.write(article1['date'])
+                    art.write('**' + article1['title'] + '**')
+                    if len(article1['image']) > 0:
+                        art.image(article1['image'])
+                    art.write(article1['body'])
+                    art.write(article1['source'])
+                    art.write(article1['url'])
+                with col2:
+                    if article2 is not None:
+                        art = st.container(border=True)
+                        art.write(article2['date'])
+                        art.markdown(article2['title'])
+                        if len(article2['image']) > 0:
+                            art.image(article2['image'])
+                        art.write(article2['body'])
+                        art.write(article2['source'])
+                        art.write(article2['url'])
 else:
     st.write('Please fill out the job description first.')

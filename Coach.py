@@ -3,6 +3,7 @@ from Candidate import Candidate
 from Job import Job
 from agents.Advisor import Advisor
 from agents.CandidateAnalyzer import CandidateAnalyzer
+from agents.CompanyInvestigator import CompanyInvestigator
 from agents.CoverLetterWriter import CoverLetterWriter
 from agents.JobDescriptionAnalyzer import JobDescriptionAnalyzer
 
@@ -28,13 +29,12 @@ class Coach:
         response = agent.work()
 
         result = dict()
-        skills = response.splitlines()
-        for line in skills:
-            clean_line = line.strip().strip('-').strip()
-            if len(clean_line) == 0:
-                continue
-            skill, reason = clean_line.split(' - ')
-            result[skill] = reason
+        try:
+            for obj in response:
+                result[obj['skill']] = obj['reason']
+        except Exception as e:
+            print(f'An error occurred: {e}')
+            print(f'Response: {response}')
 
         self.job.top_required_skills = result
 
@@ -42,13 +42,27 @@ class Coach:
         print('analyze_strengths')
 
         agent = CandidateAnalyzer(self.ai, self.candidate, self.job, is_find_strengths=True)
-        self.job.strengths = agent.work()
+        response = agent.work()
+
+        try:
+            for obj in response:
+                self.job.strengths[obj['strength']] = obj['examples']
+        except Exception as e:
+            print(f'An error occurred: {e}')
+            print(f'Response: {response}')
 
     def analyze_weaknesses(self):
         print('analyze_weaknesses')
 
         agent = CandidateAnalyzer(self.ai, self.candidate, self.job, is_find_strengths=False)
-        self.job.weaknesses = agent.work()
+        response = agent.work()
+
+        try:
+            for obj in response:
+                self.job.weaknesses[obj['weakness']] = obj['recommendations']
+        except Exception as e:
+            print(f'An error occurred: {e}')
+            print(f'Response: {response}')
 
     def create_new_cover_letter(self,
                                 is_cover_letter_in_my_writing_style: bool,
@@ -83,3 +97,9 @@ class Coach:
                                   is_rewrite=True,
                                   use_writing_style=is_cover_letter_in_my_writing_style)
         self.job.cover_letter = agent.work()
+
+    def analyze_company(self, number_of_articles: int, additional_search_text: str = None):
+        print('analyze_company')
+
+        investigator = CompanyInvestigator(self.job, number_of_articles, additional_search_text)
+        self.job.company_news = investigator.work()
