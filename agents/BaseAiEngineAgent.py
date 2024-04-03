@@ -29,6 +29,8 @@ class BaseAiEngineAgent(BaseAgentInterface):
         prompt = Prompt()
         prompt.add_system_message(f'You have the following role: {self.role}')
         prompt.add_system_message(f'You have the following background: {self.background}')
+        if self.is_json:
+            prompt.add_system_message('Your results should be in valid JSON format.')
 
         for key, value in self.context.items():
             prompt.add_user_message(f'Here is the information about the {key}:')

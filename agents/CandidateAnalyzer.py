@@ -15,7 +15,6 @@ class CandidateAnalyzer(BaseAiEngineAgent):
         background = f"""
             You are an expert in comparing resumes to job descriptions and generating a top 5 list of {goal_type} for the candidate.
             You are extremely thorough and careful about your analysis.
-            Your results should be in valid JSON format.
         """
 
         goal = f'Create a top 5 list of {goal_type}'
