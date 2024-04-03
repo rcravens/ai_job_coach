@@ -217,6 +217,7 @@ if job.is_valid():
                 col1, col2 = st.columns(2)
                 with col1:
                     art = st.container(border=True)
+                    art.write(article1['sentiment'])
                     art.write(article1['date'])
                     art.write('**' + article1['title'] + '**')
                     if len(article1['image']) > 0:
@@ -227,6 +228,7 @@ if job.is_valid():
                 with col2:
                     if article2 is not None:
                         art = st.container(border=True)
+                        art.write(article2['sentiment'])
                         art.write(article2['date'])
                         art.markdown(article2['title'])
                         if len(article2['image']) > 0:
@@ -234,5 +236,7 @@ if job.is_valid():
                         art.write(article2['body'])
                         art.write(article2['source'])
                         art.write(article2['url'])
+
+            st.write(job.company_news)
 else:
     st.write('Please fill out the job description first.')

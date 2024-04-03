@@ -6,6 +6,7 @@ from agents.CandidateAnalyzer import CandidateAnalyzer
 from agents.CompanyInvestigator import CompanyInvestigator
 from agents.CoverLetterWriter import CoverLetterWriter
 from agents.JobDescriptionAnalyzer import JobDescriptionAnalyzer
+from agents.SentimentAnalyzer import SentimentAnalyzer
 
 
 class Coach:
@@ -103,3 +104,7 @@ class Coach:
 
         investigator = CompanyInvestigator(self.job, number_of_articles, additional_search_text)
         self.job.company_news = investigator.work()
+
+        for obj in self.job.company_news:
+            sentiment_analyzer = SentimentAnalyzer(self.ai, obj['title'], obj['body'])
+            obj['sentiment'] = sentiment_analyzer.work()
