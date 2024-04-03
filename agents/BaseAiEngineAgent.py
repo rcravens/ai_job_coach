@@ -31,7 +31,7 @@ class BaseAiEngineAgent(BaseAgentInterface):
         prompt.add_system_message(f'You have the following background: {self.background}')
 
         for key, value in self.context.items():
-            prompt.add_user_message(f'Here is the information about the {key}: {value}')
+            prompt.add_user_message(f'Here is the information about the {key}:')
             prompt.add_user_message(f'{value}')
 
         prompt.add_user_message(f'You have the following goal: {self.goal}')
