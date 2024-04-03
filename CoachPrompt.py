@@ -20,7 +20,7 @@ class CoachPrompt(Prompt):
     def add_job_description(self, job: Job):
         self.add_user_message(f'The job description is: {job.job_description}')
         self.add_user_message(f'The job title is: {job.job_title}')
-        self.add_user_message(f'The hiring company is: {job.company}')
+        self.add_user_message(f'The hiring company is: {job.company_name}')
         self.add_user_message(f'The hiring manager is: {job.hiring_manager}')
         self.add_user_message(f'Source of job description is: {job.source}')
 
