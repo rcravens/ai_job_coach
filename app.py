@@ -236,7 +236,5 @@ if job.is_valid():
                         art.write(article2['body'])
                         art.write(article2['source'])
                         art.write(article2['url'])
-
-            st.write(job.company_news)
 else:
     st.write('Please fill out the job description first.')
