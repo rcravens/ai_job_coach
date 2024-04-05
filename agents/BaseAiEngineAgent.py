@@ -45,11 +45,10 @@ class BaseAiEngineAgent(BaseAgentInterface):
             prompt.add_user_message(f'Provide your answer using the following format.')
             prompt.add_user_message(f'Do not provide any additional explanations before or after the desired format.')
             if self.is_json:
-                prompt.add_user_message(f'Only provide a  RFC8259 compliant JSON response using the following this format without deviation.')
-                prompt.add_user_message(f'{self.output_format}')
+                prompt.add_user_message(f'Only provide a RFC8259 compliant JSON response using the following this format without deviation.')
             else:
                 prompt.add_user_message(f'Here is information about the desired format:')
-                prompt.add_user_message(f'{self.output_format}')
+            prompt.add_user_message(f'{self.output_format}')
 
         # Generate the prompt response
         response = self.ai.get_prompt_response(prompt.messages)

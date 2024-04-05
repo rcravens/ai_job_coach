@@ -15,7 +15,5 @@ class CompanyInvestigator(BaseAgentInterface):
         if self.additional_search is not None and len(self.additional_search) > 0:
             query += ' ' + self.additional_search
 
-        print('query', query)
-
         results = DDGS().news(query, max_results=self.number_of_articles)
         return results

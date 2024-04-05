@@ -31,7 +31,6 @@ candidate = st.session_state['candidate']
 
 # Create instance of job description
 if 'job' not in st.session_state:
-    print('creating new job')
     job = Job()
     st.session_state['job'] = job
 job = st.session_state['job']

@@ -7,7 +7,7 @@ class SentimentAnalyzer(BaseAiEngineAgent):
         role = 'Sentiment Analyzer'
 
         background = f"""
-            You are an expert in reading an articles title and boxy and providing either a POSITIVE, NEUTRAL, or NEGATIVE sentiment.
+            You are an expert in reading an articles title and body and providing either a POSITIVE, NEUTRAL, or NEGATIVE sentiment.
             You are extremely thorough and careful about your analysis.
             Your results will be a single word that is either POSITIVE, NEUTRAL, or NEGATIVE.
         """

@@ -33,13 +33,11 @@ class Job(object):
 
     @company_name.setter
     def company_name(self, company_name):
-        print('setting company_name to ' + company_name)
         if self._company_name != company_name:
             self.company_news = None
         self._company_name = company_name
 
     def _reset_job(self):
-        print('resetting job')
         self._job_description = '[Job Description]'
         self.job_title = '[Job Title]'
         self._company_name = '[Company Name]'
